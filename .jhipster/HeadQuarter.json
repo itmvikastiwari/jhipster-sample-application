@@ -1,0 +1,21 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "head_quarter",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "name": "HeadQuarter",
+  "relationships": [
+    {
+      "otherEntityName": "address",
+      "relationshipName": "address",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

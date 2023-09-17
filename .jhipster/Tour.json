@@ -1,0 +1,42 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "tour",
+  "fields": [
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "cost",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Tour",
+  "relationships": [
+    {
+      "otherEntityName": "district",
+      "relationshipName": "district",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "customer",
+      "otherEntityRelationshipName": "tours",
+      "relationshipName": "parties",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,32 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "plan_day_execution_place",
+  "fields": [
+    {
+      "fieldName": "district",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "images",
+      "fieldType": "String"
+    }
+  ],
+  "javadoc": "Sale reps can add more places and images for an plan execution day.",
+  "name": "PlanDayExecutionPlace",
+  "relationships": [
+    {
+      "otherEntityName": "address",
+      "relationshipName": "address",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "planDayExecution",
+      "relationshipName": "planDayExecution",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,38 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "plan_day",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "district",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "place",
+      "fieldType": "String"
+    }
+  ],
+  "javadoc": "Plan day will be a day row for a plan week, this will be created by manager",
+  "name": "PlanDay",
+  "relationships": [
+    {
+      "otherEntityName": "plan",
+      "relationshipName": "plan",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "planDayExecution",
+      "otherEntityRelationshipName": "planDay",
+      "relationshipName": "planDayExecution",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

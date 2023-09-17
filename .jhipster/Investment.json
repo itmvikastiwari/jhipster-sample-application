@@ -1,0 +1,34 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "investment",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "investmentType",
+      "fieldType": "InvestmentType",
+      "fieldValues": "PERTOCARD (Pertocard),CASH (Cash),PHONEPAY (Phonepay)"
+    },
+    {
+      "fieldName": "roi",
+      "fieldType": "Double"
+    }
+  ],
+  "name": "Investment",
+  "relationships": [
+    {
+      "otherEntityName": "doctor",
+      "relationshipName": "doctor",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

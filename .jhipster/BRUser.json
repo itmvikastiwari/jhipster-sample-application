@@ -1,0 +1,59 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "br_user",
+  "fields": [
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "image",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "NEW (New),ACTIVE (Active),DELETED (Deleted),ARCHIVED (Archived),LOCKED (Locked)"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "designation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "role",
+      "fieldType": "Role",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "SUPER_ADMIN,ADMIN,MANAGER,SALE_REPRESENTATIVE"
+    }
+  ],
+  "javadoc": "The User entity.",
+  "name": "BRUser",
+  "relationships": [],
+  "service": "serviceImpl"
+}

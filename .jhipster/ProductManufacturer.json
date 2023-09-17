@@ -1,0 +1,22 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "product_manufacturer",
+  "fields": [
+    {
+      "fieldName": "productId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "manufacturerId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rate",
+      "fieldType": "Double"
+    }
+  ],
+  "name": "ProductManufacturer",
+  "relationships": [],
+  "service": "serviceImpl"
+}

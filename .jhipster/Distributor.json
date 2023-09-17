@@ -1,0 +1,47 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "distributor",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "division",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lob",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Distributor",
+  "relationships": [
+    {
+      "otherEntityName": "doctor",
+      "relationshipName": "doctor",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "address",
+      "relationshipName": "address",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "district",
+      "relationshipName": "district",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "headQuarter",
+      "relationshipName": "headQuarter",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,30 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "user_leave_logs",
+  "fields": [
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "noOfDays",
+      "fieldType": "Integer"
+    }
+  ],
+  "javadoc": "User Leave Information",
+  "name": "UserLeaveLogs",
+  "relationships": [
+    {
+      "otherEntityName": "bRUser",
+      "relationshipName": "user",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

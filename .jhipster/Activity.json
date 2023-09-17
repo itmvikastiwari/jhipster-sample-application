@@ -1,0 +1,53 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "activity",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "meetingNo",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "converted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isInvested",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "investment",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "roi",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "product",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prescription",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Activity",
+  "relationships": [
+    {
+      "otherEntityName": "investment",
+      "relationshipName": "investment",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

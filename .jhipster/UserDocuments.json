@@ -1,0 +1,22 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "user_documents",
+  "fields": [
+    {
+      "fieldName": "url",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "uploadedAt",
+      "fieldType": "Instant"
+    }
+  ],
+  "name": "UserDocuments",
+  "relationships": [],
+  "service": "serviceImpl"
+}
