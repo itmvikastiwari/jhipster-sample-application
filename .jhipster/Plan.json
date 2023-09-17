@@ -1,0 +1,72 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "plan",
+  "fields": [
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "week",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "days",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "NEW (New),ACTIVE (Active),DELETED (Deleted),ARCHIVED (Archived),LOCKED (Locked)"
+    },
+    {
+      "fieldName": "targetValue",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "noOfOrder",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "orderValue",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "newCustomer",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant"
+    }
+  ],
+  "javadoc": "The Plan weekly entity.",
+  "name": "Plan",
+  "relationships": [
+    {
+      "otherEntityName": "bRUser",
+      "relationshipName": "manager",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "bRUser",
+      "relationshipName": "salesRepresentative",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

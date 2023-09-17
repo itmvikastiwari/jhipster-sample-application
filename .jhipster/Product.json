@@ -1,0 +1,30 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "product",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "composition",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "skuId",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Product",
+  "relationships": [
+    {
+      "otherEntityName": "manufacturer",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "manufacturer",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

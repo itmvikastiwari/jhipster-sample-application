@@ -1,0 +1,80 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "ethical_plan",
+  "fields": [
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "week",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "days",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "NEW (New),ACTIVE (Active),DELETED (Deleted),ARCHIVED (Archived),LOCKED (Locked)"
+    },
+    {
+      "fieldName": "saleValue",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "noOfConvertedDoctors",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "investmentAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant"
+    }
+  ],
+  "javadoc": "The EthicalPlan weekly entity.",
+  "name": "EthicalPlan",
+  "relationships": [
+    {
+      "otherEntityName": "bRUser",
+      "relationshipName": "manager",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "bRUser",
+      "relationshipName": "salesRepresentative",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "headQuarter",
+      "relationshipName": "headQuarter",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "distributor",
+      "relationshipName": "distributor",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

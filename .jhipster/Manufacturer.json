@@ -1,0 +1,30 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "manufacturer",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastOrderDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "name": "Manufacturer",
+  "relationships": [
+    {
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "manufacturer",
+      "relationshipName": "product",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

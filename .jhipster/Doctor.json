@@ -1,0 +1,49 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "doctor",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "qualification",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "specialization",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "converted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "invested",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "typeOfChambeer",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "age",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Doctor",
+  "relationships": [
+    {
+      "otherEntityName": "address",
+      "relationshipName": "address",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

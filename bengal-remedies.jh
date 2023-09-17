@@ -1,0 +1,391 @@
+
+entity District {
+    name String,
+    stateProvince String
+}
+
+entity Address {
+    streetAddress String,
+    postalCode String,
+    city String,
+    stateProvince String,
+    latitude Double,
+    longitude Double,
+}
+
+/**
+ * The Customer Information.
+ */
+entity Customer {
+    firstName String required,
+    lastName String,
+    email String,
+    phoneNumber String,
+    image String,
+    status Status,     //Potential or Onboarded
+    customerStatus CustomerStatus,     //Potential or Onboarded
+    convertedDate Instant, //This is First billing date
+    dues Double,
+    dueDate Instant,
+    lastVisited Instant,
+    division String,
+    createdAt Instant,
+    updatedAt Instant,
+    dob Instant,
+    anniversarry Instant,
+    documents String, //This is list of documents links
+    contactPerson String,
+    loanLicence Boolean
+}
+
+entity Tour {
+    startDate Instant required,
+    endDate Instant required,
+    cost Double,
+    comment String,
+}
+
+/**
+ * The User entity.
+ */
+entity BRUser {
+    firstName String required,
+    lastName String,
+    email String,
+    phoneNumber String,
+    image String,
+    status Status,
+    createdAt Instant,
+    updatedAt Instant,
+    password String,
+    designation String,
+    role Role required,
+
+}
+
+entity UserDocuments {
+    url String,
+    type String,
+    uploadedAt Instant
+}
+
+/**
+ * The Plan weekly entity.
+ */
+entity Plan {
+    startDate Instant required,
+    endDate Instant required,
+    week Integer required,
+    days Integer,
+    status Status,
+    targetValue Double,
+    noOfOrder Integer,
+    orderValue Double,
+    newCustomer Integer,
+    createdAt Instant,
+    updatedAt Instant
+}
+/**
+ * Plan day will be a day row for a plan week, this will be created by manager
+ */
+entity PlanDay{
+    date Instant required,
+    district String, //This will a list of district
+    place String
+}
+
+/**
+ * This will be updated by Sale reps
+ */
+entity PlanDayExecution {
+    isPresent Boolean,
+    noOfOrder Integer,
+    orderValue Double,
+    newCustomer Integer,
+    tada Double,
+    tadaDocuments String,  //This will a list of documents
+    createdAt Instant,
+    updatedAt Instant,
+}
+
+/**
+ * Sale reps can add more places and images for an plan execution day.
+ */
+entity PlanDayExecutionPlace {
+    district String,
+    images String
+}
+/**
+ * User Leave Information
+ */
+entity UserLeaveLogs {
+    startDate Instant,
+    endDate Instant,
+    noOfDays Integer
+}
+
+entity UserLeave {
+    totalLeave Double,
+    leaveBalance Double
+}
+
+//Procurement Entities
+entity Product{
+	name String,
+    composition String,
+    skuId String
+}
+
+entity Manufacturer{
+	name String,
+    description String,
+    lastOrderDate Instant
+}
+
+entity ProductManufacturer{
+	productId String,
+    manufacturerId String,
+    rate Double,
+}
+
+entity Order{
+	orderDate Instant,
+    manufacturingFor String,
+    purchaseNetRate Double,
+    orderQuantity Integer,
+    mrp Double,
+    saleRate Double,
+    billRate Double,
+    billNo String,
+    noOfCase Integer,
+    fulfilmentDate Instant,
+    status OrderStatus
+}
+
+entity HeadQuarter{
+	name String
+}
+
+entity Distributor{
+	name String,
+    division String,
+    lob String
+}
+
+/**
+ * The EthicalPlan weekly entity.
+ */
+entity EthicalPlan {
+    startDate Instant required,
+    endDate Instant required,
+    week Integer required,
+    days Integer,
+    status Status,
+    saleValue Double,
+    noOfConvertedDoctors Integer,
+    investmentAmount Double,
+    createdAt Instant,
+    updatedAt Instant
+}
+
+/**
+ * Plan day will be a day row for a plan week, this will be created by manager
+ */
+entity EthicalPlanDay{
+    date Instant required,
+    district String, //This will a list of district
+    place String,
+    activites String
+}
+
+/**
+ * This will be updated by Sale reps
+ */
+entity EthicalPlanDayExecution {
+    isPresent Boolean,
+    noOfConvertedDoctor Integer,
+    totalInvestment Double,
+    createdAt Instant,
+    updatedAt Instant,
+    
+}
+
+entity Activity{
+	name String,
+    meetingNo Integer,
+    comment String,
+    converted Boolean,
+    isInvested Boolean,
+    investment Double,
+    roi Double,
+    product String,
+    prescription String
+}
+
+entity Investment{
+	date Instant,
+    amount Double,
+    investmentType InvestmentType,
+    roi Double
+}
+
+entity Doctor{
+	name String,
+    qualification String,
+    specialization String,
+    converted Boolean,
+    invested Boolean,
+    typeOfChambeer String,
+    age Double,
+    phoneNumber String,
+}
+
+relationship ManyToOne {
+    Investment{doctor} to Doctor
+}
+
+relationship ManyToOne {
+    Distributor{district} to District
+}
+
+relationship ManyToOne {
+    Distributor{headQuarter} to HeadQuarter
+}
+
+relationship OneToOne {
+    Distributor{doctor} to Doctor
+}
+
+relationship ManyToOne {
+    Order{product} to Product
+}
+
+relationship ManyToOne {
+    Order{manufacturer} to Manufacturer
+}
+
+relationship ManyToMany {
+    Manufacturer{product} to Product{manufacturer}
+}
+
+relationship ManyToOne {
+    PlanDayExecutionPlace{address} to Address
+}
+
+relationship ManyToMany {
+    Tour{parties} to Customer{tours}
+}
+
+relationship OneToOne {
+    Activity{investment} to Investment
+}
+
+relationship ManyToOne {
+    Tour{district} to District
+}
+
+relationship OneToOne {
+    Customer{address} to Address
+}
+
+relationship OneToOne {
+    Doctor{address} to Address
+}
+
+relationship OneToOne {
+    HeadQuarter{address} to Address
+}
+
+relationship OneToOne {
+    Distributor{address} to Address
+}
+
+relationship OneToOne {
+    UserLeave{user} to BRUser
+}
+
+relationship ManyToOne {
+    UserLeaveLogs{user} to BRUser
+}
+
+relationship ManyToOne {
+    PlanDay{plan} to Plan
+}
+
+relationship ManyToOne {
+    EthicalPlanDay{ethicalPlan} to EthicalPlan
+}
+
+relationship OneToOne {
+    Plan{manager} to BRUser
+}
+
+relationship OneToOne {
+    Plan{salesRepresentative} to BRUser
+}
+
+relationship OneToOne {
+    EthicalPlan{manager} to BRUser
+}
+
+relationship OneToOne {
+    EthicalPlan{salesRepresentative} to BRUser
+}
+
+relationship OneToOne {
+    PlanDayExecution{planDay} to PlanDay{planDayExecution}
+}
+relationship ManyToOne {
+    PlanDayExecutionPlace{planDayExecution} to PlanDayExecution
+}
+
+relationship OneToOne {
+    EthicalPlanDayExecution{activity} to Activity
+}
+
+
+relationship ManyToOne {
+    EthicalPlanDayExecution{doctor} to Doctor
+}
+
+relationship OneToOne {
+    EthicalPlan{headQuarter} to HeadQuarter
+}
+relationship OneToOne {
+    EthicalPlan{distributor} to Distributor
+}
+
+//User Roles
+enum Role {
+    SUPER_ADMIN, ADMIN, MANAGER, SALE_REPRESENTATIVE
+}
+
+//Entity States
+enum Status {
+    NEW(New), ACTIVE(Active), DELETED(Deleted), ARCHIVED(Archived), LOCKED(Locked)
+}
+
+//Entity States
+enum OrderStatus {
+    TO_BE_INITIATED("Order to be initiated"), 
+    INITIATED("Order initiated with rate"),
+    ORDER_DELAYED("Order pending after threshold time"), 
+    TRANSPORTED("Order In Transit"), 
+    DELIVERED("Order Delivered")
+}
+
+enum CustomerStatus{
+    POTENTIAL(Potential), ONBOARDED(Onboarded)
+}
+
+enum InvestmentType{
+    PERTOCARD(Pertocard), CASH(Cash), PHONEPAY(Phonepay)
+}
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+//service all with serviceImpl
+dto all with mapstruct
+service all with serviceImpl

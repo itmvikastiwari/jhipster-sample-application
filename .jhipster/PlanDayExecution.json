@@ -1,0 +1,51 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "plan_day_execution",
+  "fields": [
+    {
+      "fieldName": "isPresent",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "noOfOrder",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "orderValue",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "newCustomer",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tada",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "tadaDocuments",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant"
+    }
+  ],
+  "javadoc": "This will be updated by Sale reps",
+  "name": "PlanDayExecution",
+  "relationships": [
+    {
+      "otherEntityName": "planDay",
+      "otherEntityRelationshipName": "planDayExecution",
+      "relationshipName": "planDay",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

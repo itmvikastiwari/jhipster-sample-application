@@ -1,0 +1,25 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "user_leave",
+  "fields": [
+    {
+      "fieldName": "totalLeave",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "leaveBalance",
+      "fieldType": "Double"
+    }
+  ],
+  "name": "UserLeave",
+  "relationships": [
+    {
+      "otherEntityName": "bRUser",
+      "relationshipName": "user",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

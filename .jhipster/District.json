@@ -1,0 +1,18 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "district",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stateProvince",
+      "fieldType": "String"
+    }
+  ],
+  "name": "District",
+  "relationships": [],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,68 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "order",
+  "fields": [
+    {
+      "fieldName": "orderDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "manufacturingFor",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "purchaseNetRate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "orderQuantity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "mrp",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "saleRate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "billRate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "billNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "noOfCase",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "fulfilmentDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "OrderStatus",
+      "fieldValues": "TO_BE_INITIATED (Order to be initiated),INITIATED (Order initiated with rate),ORDER_DELAYED (Order pending after threshold time),TRANSPORTED (Order In Transit),DELIVERED (Order Delivered)"
+    }
+  ],
+  "name": "Order",
+  "relationships": [
+    {
+      "otherEntityName": "product",
+      "relationshipName": "product",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "manufacturer",
+      "relationshipName": "manufacturer",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

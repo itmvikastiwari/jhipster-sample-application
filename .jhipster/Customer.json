@@ -1,0 +1,104 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "customer",
+  "fields": [
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "image",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "NEW (New),ACTIVE (Active),DELETED (Deleted),ARCHIVED (Archived),LOCKED (Locked)"
+    },
+    {
+      "fieldName": "customerStatus",
+      "fieldType": "CustomerStatus",
+      "fieldValues": "POTENTIAL (Potential),ONBOARDED (Onboarded)"
+    },
+    {
+      "fieldName": "convertedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dues",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "dueDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastVisited",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "division",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dob",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "anniversarry",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "documents",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contactPerson",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "loanLicence",
+      "fieldType": "Boolean"
+    }
+  ],
+  "javadoc": "The Customer Information.",
+  "name": "Customer",
+  "relationships": [
+    {
+      "otherEntityName": "address",
+      "relationshipName": "address",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "tour",
+      "otherEntityRelationshipName": "parties",
+      "relationshipName": "tours",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}
